@@ -1,0 +1,27 @@
+$background-blue: #21d4fd;
+$background-violet: #b721ff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-size: 22px;
+  font-family: Rubik, Verdana, Geneva, Tahoma, sans-serif;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(-85deg, $background-blue, $background-violet);
+  background: -o-linear-gradient(-85deg, $background-blue, $background-violet);
+  background: -moz-linear-gradient(-85deg, $background-blue, $background-violet);
+  background: linear-gradient(-85deg, $background-blue, $background-violet);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.App {
+  padding: 20px;
+}

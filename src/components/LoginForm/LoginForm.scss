@@ -1,0 +1,145 @@
+$primary-blue: #21d4fd;
+$primary-violet: #b721ff;
+$text-color-primary: #333333;
+$grey-light: #bbbbbb;
+$grey-dark: #666666;
+
+.form {
+  max-width: 390px;
+  min-width: 280px;
+  height: 620px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
+  padding: 40px 35px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
+  -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
+  -o-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
+  -ms-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
+  overflow: hidden;
+
+  &__info {
+    min-height: 65px;
+    margin-bottom: 40px;
+    color: $text-color-primary;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  &__field {
+    width: 100%;
+    position: relative;
+    margin-bottom: 25px;
+  }
+
+  &__input {
+    width: 100%;
+    display: block;
+    margin-bottom: 5px;
+    padding: 15px 10px 8px 35px;
+    color: $text-color-primary;
+    border: none;
+    border-bottom: 1px solid $grey-light;
+    background-size: 17px auto;
+    background-repeat: no-repeat;
+    outline: none;
+
+    &:focus {
+      border-bottom: 1px solid $grey-dark;
+    }
+
+    &:focus + label {
+      top: -15px;
+      left: 6px;
+    }
+
+    &::placeholder {
+      color: $grey-light;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 12px;
+    left: 33px;
+    color: $grey-dark;
+    font-size: 14px;
+    line-height: 1.2;
+    transition: all 0.3s;
+  }
+
+  &__btn {
+    &_submit {
+      min-width: 240px;
+      position: relative;
+      margin: 20px 0 30px;
+      padding: 15px;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      background: transparent;
+      border: none;
+      border-radius: 30px;
+      outline: none;
+      overflow: hidden;
+      cursor: pointer;
+      z-index: 10;
+
+      &:hover .form__btn_submit_background {
+        left: 0;
+      }
+
+      &_background {
+        content: '';
+        width: 200%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        background: $primary-violet;
+        background: -webkit-linear-gradient(to right, $primary-violet, $primary-blue, $primary-violet);
+        background: -o-linear-gradient(to right, $primary-violet, $primary-blue, $primary-violet);
+        background: -moz-linear-gradient(to right, $primary-violet, $primary-blue, $primary-violet);
+        background: linear-gradient(to right, $primary-violet, $primary-blue, $primary-violet);
+        -webkit-transition: all .4s;
+        -o-transition: all .4s;
+        -moz-transition: all .4s;
+        transition: all .4s;
+        z-index: -1;
+      }
+    }
+
+    &_change-type, &_restore {
+       color: $grey-dark;
+       font-size: 14px;
+       cursor: pointer;
+
+       &:hover {
+         color: $primary-violet;
+       }
+     }
+
+    &_restore {
+      align-self: flex-end;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__warning-message {
+    width: 100%;
+    padding-left: 5px;
+    font-size: 12px;
+    color: #f10808;
+    visibility: hidden;
+  }
+}
