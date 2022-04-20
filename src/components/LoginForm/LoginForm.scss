@@ -20,7 +20,6 @@ $grey-dark: #666666;
   -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
   -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
   -o-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
-  -ms-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
   overflow: hidden;
 
   &__info {
@@ -33,10 +32,16 @@ $grey-dark: #666666;
     text-align: center;
   }
 
+  &__fields {
+    width: 100%;
+    transition: all 0.2s;
+  }
+
   &__field {
     width: 100%;
     position: relative;
-    margin-bottom: 25px;
+    margin-bottom: 18px;
+    transition: all 0.2s;
   }
 
   &__input {
@@ -74,7 +79,31 @@ $grey-dark: #666666;
     color: $grey-dark;
     font-size: 14px;
     line-height: 1.2;
-    transition: all 0.3s;
+    transition: all 0.2s;
+  }
+
+  &__icon {
+    &_show-password {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 15px;
+      right: 0;
+      padding: 0 15px;
+      background-image: url('../../../public/icon-eye.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.6;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &_active {
+        background-image: url('../../../public/icon-eye-off.svg');
+      }
+    }
   }
 
   &__btn {
@@ -120,14 +149,14 @@ $grey-dark: #666666;
     }
 
     &_change-type, &_restore {
-       color: $grey-dark;
-       font-size: 14px;
-       cursor: pointer;
+      color: $grey-dark;
+      font-size: 14px;
+      cursor: pointer;
 
-       &:hover {
-         color: $primary-violet;
-       }
-     }
+      &:hover {
+        color: $primary-violet;
+      }
+    }
 
     &_restore {
       align-self: flex-end;
@@ -141,5 +170,17 @@ $grey-dark: #666666;
     font-size: 12px;
     color: #f10808;
     visibility: hidden;
+  }
+}
+
+#login-form {
+  &__email {
+    background-image: url("../../../public/icon-email.svg");
+    background-position: 8px 14px;
+  }
+
+  &__password_new, &__password_repeat {
+    background-image: url("../../../public/icon-lock.svg");
+    background-position: 9px 13px;
   }
 }
